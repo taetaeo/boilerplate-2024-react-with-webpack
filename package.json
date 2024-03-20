@@ -1,8 +1,20 @@
 {
-  "name": "react-ts-boilerpate-2024",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "react-ts-boilerplate-2024",
+  "version": "0.0.1",
+  "main": "index.tsx",
+  "repository": {
+    "directory": "https://github.com/taetaeo/react-ts-boilerplate-2024.git"
+  },
+  "author": "taetaeo <ohtk1119@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config ./webpack/webpack/webpack.dev.js --open --hot",
+    "build": "webpack --config ./webpack/webpack.prod.js",
+    "start": "webpack --config webpack.dev.js",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -10,8 +22,12 @@
   "devDependencies": {
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18.2.22",
+    "css-loader": "^6.10.0",
     "html-webpack-plugin": "^5.6.0",
     "prettier": "^3.2.5",
+    "sass": "^1.72.0",
+    "sass-loader": "^14.1.1",
+    "style-loader": "^3.3.4",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.2",
     "webpack": "^5.90.3",
