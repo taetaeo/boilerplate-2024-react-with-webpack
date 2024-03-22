@@ -1638,7 +1638,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node@*", "@types/node@^20.11.26", "@types/node@^20.11.30":
+"@types/node@*", "@types/node@^20.11.26", "@types/node@^20.11.30", "@types/node@^20.11.5":
   version "20.11.30"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.30.tgz#9c33467fc23167a347e73834f788f4b9f399d66f"
   integrity sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==
@@ -3041,6 +3041,11 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
+
+fs@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/fs/-/fs-0.0.1-security.tgz#8a7bd37186b6dddf3813f23858b57ecaaf5e41d4"
+  integrity sha512-3XY9e1pP0CVEUCdj5BmfIZxRBTSDycnbqhIOGec9QYtmVH2fbLpj86CFWkrNOkt/Fvty4KZG5lTglL9j/gJ87w==
 
 fsevents@^2.3.2, fsevents@~2.3.2:
   version "2.3.3"
@@ -5267,6 +5272,14 @@ taeo-hooks@^1.0.25:
   version "1.0.25"
   resolved "https://registry.yarnpkg.com/taeo-hooks/-/taeo-hooks-1.0.25.tgz#0bc7b3a7fabc3c3587e767990c96ec4b5f8a4f2b"
   integrity sha512-b/VcuFGlKE8ejz7PUmquFyFNF4IZYbQMLxt5qVZLM2hOM/uq0Uq5Llncde+dXz6kn2BM322th+73GJSGec7omw==
+
+taeo-utils@^2.0.14:
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/taeo-utils/-/taeo-utils-2.0.14.tgz#f2962f0bfe2b43a39831aadefaef4ca1f3b3c0e3"
+  integrity sha512-Dhcgfp0YPOrkulX1eRcjXwBOWIP82/IZXrPC00zaWpgovKu47LcEwGo7wtESJnNLHStZd6ANzMOkdMSkkM5fiA==
+  dependencies:
+    "@types/node" "^20.11.5"
+    fs "^0.0.1-security"
 
 tapable@^2.0.0, tapable@^2.1.1, tapable@^2.2.0:
   version "2.2.1"
