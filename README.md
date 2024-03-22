@@ -495,7 +495,7 @@ $ npx msw init public/ --save
 
 ### 14.3. msw api 모킹 소개
 
-![msw](http://git.uinetworks.kr/IntelligentSolutionTeam/ist-react-ts-with-webpack-rtk-boilerplate-2024/raw/branch/main/public/images/msw.png)
+![msw](https://raw.githubusercontent.com/taetaeo/react-ts-webpack-boilerplate-2024/main/public/images/msw.png)
 
 ### 14.4. 사용법
 
@@ -659,7 +659,7 @@ enableMocking().then(() => {
   "author": "깃헙아이디 <깃헙 이메일>",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll",
     "dev": "webpack-dev-server --config ./webpack/webpack.dev.js --open --hot",
     "build": "webpack --config ./webpack/webpack.prod.js",
     "start": "webpack-dev-server --config ./webpack/webpack.dev.js --open --hot",
@@ -667,30 +667,42 @@ enableMocking().then(() => {
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "msw": "^2.2.10",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "taeo-hooks": "^1.0.25"
   },
   "devDependencies": {
     "@babel/core": "^7.24.1",
     "@babel/preset-env": "^7.24.1",
     "@babel/preset-react": "^7.24.1",
     "@babel/preset-typescript": "^7.24.1",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.30",
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18.2.22",
     "babel-loader": "^9.1.3",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.10.0",
     "html-webpack-plugin": "^5.6.0",
+    "jest": "^29.7.0",
     "prettier": "^3.2.5",
+    "process": "^0.11.10",
     "sass": "^1.72.0",
     "sass-loader": "^14.1.1",
     "style-loader": "^3.3.4",
+    "ts-jest": "^29.1.2",
     "ts-loader": "^9.5.1",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.4.2",
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
     "webpack-merge": "^5.10.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
 ```
