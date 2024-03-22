@@ -1,6 +1,8 @@
 const path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -11,11 +13,12 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    plugins: [new TsconfigPathsPlugin()],
   },
   module: {
     rules: [
       {
-        test: /\.(js|ts|tsx)$/i,
+        test: /\.(js|jsx|ts|tsx)$/i,
         use: ['babel-loader', 'ts-loader'],
       },
       {
@@ -34,6 +37,10 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images',
+            },
           },
         ],
       },
@@ -41,13 +48,22 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.html')
+      template: './public/index.html',
+      minify: {
+        collapseWhitespace: true, // 빈칸 제거
+        removeComments: true, // 주석제거
+      },
     }),
     new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      process: 'process/browser.js',
+    }),
   ],
   devtool: 'inline-source-map',
   devServer: {
-    static: './dist',
+    static: {
+      directory: path.resolve(__dirname, '../dist'),
+    },
     hot: true,
     open: true,
   },
