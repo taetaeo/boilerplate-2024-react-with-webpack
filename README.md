@@ -467,6 +467,42 @@ module.exports = {
 };
 ```
 
+### 12.2. env 파일 읽기 위한 설정
+
+```bash
+# dotenv-webpack 패키지 설치
+$ yarn add dotenv-webpack
+
+```
+
+분기된 config에 대해서 `.env` 파일을 읽기 위해서는 `plugins` 에 사용할 환경변수를 등록해야 합니다.
+
+```ts
+// webpack/webpack.dev.js
+
+const { merge } = require('webpack-merge');
+const path = require('path');
+const common = require('./webpack.common.js');
+const Dotenv = require('dotenv-webpack');
+
+module.exports = merge(common, {
+  mode: 'development',
+  devtool: 'eval',
+  plugins: [new Dotenv({ path: '.env.development' })], // .env.development 파일을 읽도록 한다.
+  devServer: {
+    historyApiFallback: true,
+    port: 3000,
+    hot: true,
+    compress: true, //개발환경에서 압축하여 보여준다. 빠른 실행에 좋다.
+    static: {
+      directory: path.resolve(__dirname, '../public'),
+    },
+  },
+});
+```
+
+위와 같은 방법으로 `webpack.prod.js` 파일에서도 `env.production` 환경변수를 사용하도록 지정해주면 됩니다.
+
 ## 14. MSW 설치
 
 > `MSW` 는 mocking service worker의 약자로 말 그대로 service worker를 이용하여 가짜 Api를 mocking 하는 역할을 합니다.
